@@ -1,4 +1,4 @@
-name: "Git Hub Actions"
+name: "Terraform Workflow"
 
 on:
   workflow_dispatch:
@@ -7,12 +7,26 @@ permissions:
   contents: read
 
 jobs:
-  sample-job:  
+  terraform:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the code from your repository
       - name: Checkout Code
         uses: actions/checkout@v4
-      
-      - name: Run a script
-        run: echo "Merge the changes"
+
+      # Initialize Terraform
+      - name: Terraform Init
+        run: terraform init
+
+      # Validate the Terraform configuration
+      - name: Terraform Validate
+        run: terraform validate
+
+      # Run Terraform Plan (this will output the execution plan)
+      - name: Terraform Plan
+        run: terraform plan   # Specify the tfvars file
+
+      # Apply the Terraform plan
+      - name: Terraform Apply
+        run: terraform apply   # Automatically apply using tfvars file
