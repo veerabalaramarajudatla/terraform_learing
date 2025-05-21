@@ -37,8 +37,8 @@ jobs:
 
       # Step 6: Run Terraform Plan
       - name: Terraform Plan
-        run: terraform plan -var-file="terraform.tfvars"  # Use the tfvars file
+        run: terraform plan  # Use the tfvars file
 
       # Step 7: Apply the Terraform plan
       - name: Terraform Apply
-        run: terraform apply -auto-approve -var-file="terraform.tfvars"  # Automatically approve the apply
+        run: terraform apply -auto-approve  # Automatically approve the apply
