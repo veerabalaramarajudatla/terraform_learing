@@ -29,6 +29,6 @@ resource "aws_instance" "instance_details" {
   }
   lifecycle {
     prevent_destroy = true
-    ignore_changes = [bucket]
+    ignore_changes = [Name]
   }
 }
