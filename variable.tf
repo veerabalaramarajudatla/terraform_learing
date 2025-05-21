@@ -8,11 +8,6 @@ variable "bucket_name" {
   description = "S3 Bucket name"
 }
 
-variable "instance_name" {
-    type = string
-    description = "Instance Name"
-}
-
 variable "ami_id" {
     type = string
     description = "AMI details"
