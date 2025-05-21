@@ -15,3 +15,9 @@ provider "aws" {
 resource "aws_s3_bucket" "bucket_details" {
   bucket = var.bucket_name
 }
+
+resource "aws_ec2_instance" "instance_details" {
+    name = var.instance_name
+    ami = var.ami_id
+    instance_type = var.instance_typ
+}
