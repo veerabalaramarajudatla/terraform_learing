@@ -1,15 +1,21 @@
-variable "region"{
-    type = string
+variable "region" {
+  type        = string
+  description = "AWS region"
 }
 
-variable "access_key"{
-    type = string
+variable "bucket_name" {
+  type        = string
+  description = "S3 Bucket name"
 }
 
-variable "secret_key"{
-    type = string
+variable "access_key" {
+  type        = string
+  description = "AWS Access Key"
+  sensitive   = true
 }
 
-variable "bucket_name"{
-    type = string
+variable "secret_key" {
+  type        = string
+  description = "AWS Secret Key"
+  sensitive   = true
 }
