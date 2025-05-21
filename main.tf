@@ -23,12 +23,4 @@ resource "aws_s3_bucket" "bucket_details" {
 resource "aws_instance" "instance_details" {
   ami           = var.ami_id
   instance_type = "t2.micro"
-
-  tags = {
-    Name = var.instance_name
-  }
-  lifecycle {
-    prevent_destroy = true
-    ignore_changes = [Name]
-  }
 }
