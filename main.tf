@@ -16,5 +16,4 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket_details" {
   bucket = var.bucket_name
-  acl    = "private"
 }
