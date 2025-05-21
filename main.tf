@@ -14,6 +14,10 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket_details" {
   bucket = var.bucket_name
+  lifecycle {
+    prevent_destroy = true
+    ignore_changes = [bucket]
+  }
 }
 
 resource "aws_instance" "instance_details" {
@@ -22,5 +26,9 @@ resource "aws_instance" "instance_details" {
 
   tags = {
     Name = var.instance_name
+  }
+  lifecycle {
+    prevent_destroy = true
+    ignore_changes = [bucket]
   }
 }
