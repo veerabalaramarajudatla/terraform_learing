@@ -17,7 +17,10 @@ resource "aws_s3_bucket" "bucket_details" {
 }
 
 resource "aws_instance" "instance_details" {
-    name = var.instance_name
-    ami = var.ami_id
-    instance_type = var.instance_typ
+  ami           = var.ami_id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = var.instance_name
+  }
 }
