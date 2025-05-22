@@ -1,4 +1,4 @@
-output "instance_public_ip" {
+output "bucket" {
   description = "The public IP address of the EC2 instance"
-  value       = aws_instance.instance_details.public_ip
+  value       = aws_s3_bucket.bucket
 }
