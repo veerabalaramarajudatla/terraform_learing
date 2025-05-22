@@ -8,7 +8,7 @@ terraform {
   required_version = ">= 1.0"
 }
 
-provider "aws" {
+provider "aws" "locationname" {
   region     = var.region
 }
 
