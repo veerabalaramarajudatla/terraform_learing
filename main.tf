@@ -14,16 +14,4 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket_details" {
   bucket = var.bucket_name
-  lifecycle {
-    prevent_destroy = true
-    ignore_changes = [bucket]
-  }
-}
-
-resource "aws_instance" "instance_details" {
-  ami           = var.ami_id
-  instance_type = "t2.micro"
-  tags = {
-    Name = var.instance_name
-  }
 }
