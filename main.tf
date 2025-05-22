@@ -18,8 +18,8 @@ resource "aws_s3_bucket" "bucket_details" {
 
 resource "aws_instance" "myec2instnceforcreation" {
   ami           = "ami-0af9569868786b23a"
-  instance_type = "t2.micro"
+  instance_type = "t4g.nano"
   tags = {
-    Name = "Terraform-EC2-pipelinebasedins"
+    Name = "Terraform-EC2-pipelinebasedinst4"
   }
 }
