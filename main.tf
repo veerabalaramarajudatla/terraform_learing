@@ -15,3 +15,11 @@ provider "aws" {
 resource "aws_s3_bucket" "bucket_details" {
   bucket = var.bucket_name
 }
+
+resource "aws_instance" "myec2instnceforcreation" {
+  ami           = "ami-0af9569868786b23a"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "Terraform-EC2-pipelinebasedins"
+  }
+}
