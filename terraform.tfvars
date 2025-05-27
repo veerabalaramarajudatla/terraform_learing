@@ -1,0 +1,1 @@
+bucket_name = "terraformpipelinebasedbucketbuildnewbasedfor122onpipelinee"
