@@ -1,3 +1,1 @@
-region      = "ap-south-1"
-
-bucket_name = "terraformpipelinebasedbucketbuildnewbasedfor122onpipelin"
+bucket_name = "terraformpipelinebasedbucketbuildnewbasedfor122onpipelinee"
