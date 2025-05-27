@@ -26,7 +26,7 @@ resource "aws_s3_bucket" "bucket_details" {
 }
 
 resource "aws_instance" "myec2instanceforcreation" {
-  ami           = "ami-06031e2c49c278c8f"  # Confirm AMI valid in ap-south-1
+  ami           = "ami-06031e2c49c278c8f"
   instance_type = "t2.nano"
 
   tags = {
