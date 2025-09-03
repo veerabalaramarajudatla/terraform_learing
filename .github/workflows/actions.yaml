@@ -1,7 +1,17 @@
 name: "Terraform Workflow"
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Choose Terraform action"
+        required: true
+        default: "apply"
+        type: choice
+        options:
+          - apply
+          - destroy
+
 permissions:
   contents: read  
 
@@ -30,7 +40,12 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan 
-        
+        run: terraform plan
+         
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        if: ${{ github.event.inputs.action == 'apply' }}
+        run: terraform apply -auto-approve tfplan
+
+      - name: Terraform Destroy
+        if: ${{ github.event.inputs.action == 'destroy' }}
+        run: terraform destroy -auto-approve
