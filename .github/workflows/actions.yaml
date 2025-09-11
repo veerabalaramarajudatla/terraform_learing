@@ -40,10 +40,11 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan
-         
+        id: plan
+        run: terraform plan -out=tfplan
+
       - name: Terraform Apply
-        if: ${{ github.event.inputs.action == 'apply' }}
+        if: ${{ github.event.inputs.action == 'apply' && success() }}
         run: terraform apply -auto-approve tfplan
 
       - name: Terraform Destroy
